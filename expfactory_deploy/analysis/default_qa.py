@@ -182,7 +182,7 @@ def get_post_battery_feedback(df):
 def get_survey_metrics(df, task_name):
     total_omissions = 0
     all_values_same = True
-    if "fagerstrom" not in task_name:
+    if "fagerstrom" not in task_name and "mcarthur" not in task_name:
         df = df[df["trial_type"] == "survey"]
         average_rt = df["rt"].mean()
         for response in df["response"]:
